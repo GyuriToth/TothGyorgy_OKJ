@@ -1,0 +1,27 @@
+.home {
+    width: 50%;
+    height: 100vh;
+    padding: 30px 0px;
+    display: flex;
+    margin: auto;
+    color: white;
+}
+
+.home__feed {
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 0 15px;
+    order: 2;
+    flex: 1 1 50%;
+}
+
+.home__sidebarLeft {
+    background-color: rgba(0, 0, 0, 0.6);
+    flex: 1 1 5%;
+    order: 1;
+}
+
+.home__sidebarRight {
+    background-color: rgba(0, 0, 0, 0.6);
+    flex: 1 1 5%;
+    order: 3;
+}

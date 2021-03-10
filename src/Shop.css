@@ -1,0 +1,20 @@
+.shop {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.shop__image {
+    width: 100%;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+    z-index: -1;
+    margin-bottom: -150px;
+}
+
+.shop__row {
+    display: flex;
+    z-index: 1;
+    margin-right: 5px;
+    margin-left: 5px;
+
+}

@@ -7,76 +7,92 @@ function Shop() {
 
   return (
     <div className="shop">
-      <img className="shop__image" src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg" alt="banner"/>
+      <div className="shop__mask"></div>
       
-      <div className="shop__row">
-        <Product
-          id="123456789"
-          title="Test Item"
-          price={1000}
-          rating={1}
-          image="https://images-na.ssl-images-amazon.com/images/I/71TnVZ-xTYL._AC_SY450_.jpg"
-        />
-        <Product
-          id="123456789"
-          title="Test Item"
-          price={70000}
-          rating={5}
-          image="https://images-na.ssl-images-amazon.com/images/I/71TnVZ-xTYL._AC_SY450_.jpg"
-        />
-        <Product
-          id="123456789"
-          title="Test Item"
-          price={30000}
-          rating={4}
-          image="https://images-na.ssl-images-amazon.com/images/I/71TnVZ-xTYL._AC_SY450_.jpg"
-        />
-        <Product
-          id="123456789"
-          title="Test Item"
-          price={1000}
-          rating={1}
-          image="https://images-na.ssl-images-amazon.com/images/I/71TnVZ-xTYL._AC_SY450_.jpg"
-        />
-        <Product
-          id="123456789"
-          title="Test Item"
-          price={1000}
-          rating={1}
-          image="https://images-na.ssl-images-amazon.com/images/I/71TnVZ-xTYL._AC_SY450_.jpg"
-        />
-        <Product
-          id="123456789"
-          title="Test Item"
-          price={1000}
-          rating={1}
-          image="https://images-na.ssl-images-amazon.com/images/I/71TnVZ-xTYL._AC_SY450_.jpg"
-        />
-        
+      <div className="shop__filterBar">
+
       </div>
 
-      <div className="shop__row">
-        <Product
-          id="123456789"
-          title="Test Item"
-          price={1000}
-          rating={1}
-          image="https://images-na.ssl-images-amazon.com/images/I/71TnVZ-xTYL._AC_SY450_.jpg"
-        />
-        <Product
-          id="123456789"
-          title="Test Item"
-          price={70000}
-          rating={5}
-          image="https://images-na.ssl-images-amazon.com/images/I/71TnVZ-xTYL._AC_SY450_.jpg"
-        />
-        <Product
-          id="123456789"
-          title="Test Item"
-          price={30000}
-          rating={4}
-          image="https://images-na.ssl-images-amazon.com/images/I/71TnVZ-xTYL._AC_SY450_.jpg"
-        />
+      <div className="shop__container">
+        <div className="shop__sidePanel">
+          <div className="shop__panelTopTrending">
+            <h2>Kiemelt termékek</h2>
+            <p>Termék1</p>
+            <p>Termék2</p>
+            <p>Termék3</p>
+            <p>Termék4</p>
+          </div>
+        </div>
+
+        <div className="shop__page">
+          <div className="shop__row">
+            <Product
+              id="123"
+              title="Test Item 1"
+              price={1000}
+              rating={1}
+              image="https://wordstream-files-prod.s3.amazonaws.com/s3fs-public/styles/simple_image/public/images/media/images/amazon-seo-product-images.jpg?RTG4A4jxOolNLZ63fSqHL5uboAaRwXU6&itok=XSbikWqd"
+            />
+            <Product
+              id="456456"
+              title="Test Item 1"
+              price={1000}
+              rating={5}
+              image="https://wordstream-files-prod.s3.amazonaws.com/s3fs-public/styles/simple_image/public/images/media/images/amazon-seo-product-images.jpg?RTG4A4jxOolNLZ63fSqHL5uboAaRwXU6&itok=XSbikWqd"
+            />
+            <Product
+              id="454456"
+              title="Test Item 1"
+              price={1000}
+              rating={1}
+              image="https://wordstream-files-prod.s3.amazonaws.com/s3fs-public/styles/simple_image/public/images/media/images/amazon-seo-product-images.jpg?RTG4A4jxOolNLZ63fSqHL5uboAaRwXU6&itok=XSbikWqd"
+            />
+            <Product
+              id="345645"
+              title="Test Item 1"
+              price={1000}
+              rating={1}
+              image="https://wordstream-files-prod.s3.amazonaws.com/s3fs-public/styles/simple_image/public/images/media/images/amazon-seo-product-images.jpg?RTG4A4jxOolNLZ63fSqHL5uboAaRwXU6&itok=XSbikWqd"
+            />
+            <Product
+              id="1231"
+              title="Test Item 1"
+              price={1000}
+              rating={1}
+              image="https://wordstream-files-prod.s3.amazonaws.com/s3fs-public/styles/simple_image/public/images/media/images/amazon-seo-product-images.jpg?RTG4A4jxOolNLZ63fSqHL5uboAaRwXU6&itok=XSbikWqd"
+            />
+          </div>
+          <div className="shop__row">
+          <Product
+              id="34534"
+              title="Test Item 1"
+              price={1000}
+              rating={1}
+              image="https://wordstream-files-prod.s3.amazonaws.com/s3fs-public/styles/simple_image/public/images/media/images/amazon-seo-product-images.jpg?RTG4A4jxOolNLZ63fSqHL5uboAaRwXU6&itok=XSbikWqd"
+            />
+            <Product
+              id="567563"
+              title="Test Item 1"
+              price={1000}
+              rating={1}
+              image="https://wordstream-files-prod.s3.amazonaws.com/s3fs-public/styles/simple_image/public/images/media/images/amazon-seo-product-images.jpg?RTG4A4jxOolNLZ63fSqHL5uboAaRwXU6&itok=XSbikWqd"
+            />
+            <Product
+              id="345"
+              title="Test Item 1"
+              price={1000}
+              rating={1}
+              image="https://wordstream-files-prod.s3.amazonaws.com/s3fs-public/styles/simple_image/public/images/media/images/amazon-seo-product-images.jpg?RTG4A4jxOolNLZ63fSqHL5uboAaRwXU6&itok=XSbikWqd"
+            />
+            <Product
+              id="6578978"
+              title="Test Item 1"
+              price={1000}
+              rating={1}
+              image="https://wordstream-files-prod.s3.amazonaws.com/s3fs-public/styles/simple_image/public/images/media/images/amazon-seo-product-images.jpg?RTG4A4jxOolNLZ63fSqHL5uboAaRwXU6&itok=XSbikWqd"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

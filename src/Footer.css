@@ -3,6 +3,7 @@
     width: 100%;
     min-height: 100px;
     color: #FFF;
+    padding-bottom: 10px;
 }
 
 .footer__top {
@@ -21,4 +22,9 @@
     align-items: center;
     justify-content: space-evenly;
     margin-top: 10px;
+}
+
+.footer_linkCol {
+    display: flex;
+    flex-direction: column;
 }

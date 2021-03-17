@@ -18,31 +18,38 @@ function Login(){
         })
         .catch(e => alert(e.message))
     }
-
-    const registeruser = event =>{
-        event.preventDefault()
-        auth.createUserWithEmailAndPassword(useremail, userpassword)
-        .then(auth => {
-            history.push('/');
-        })
-        .catch(e => alert(e.message))
-    }
     
     return(
         <div className="login">
-            <Link>
-                <img className="login__logo" alt="" src={logo}/>
+            <Link to="/">
+                <img className="login__logo" alt="logo" src={logo}/>
             </Link>
             <div className="login__container">
-                <h1>Sign In</h1>
-                <form>
-                    <h5>E-mail</h5>
-                    <input value={useremail} onChange={event => setUserEmail(event.target.value)} type="email"></input>
-                    <h5>Password</h5>
-                    <input value={userpassword} onChange={event => setUserPassword(event.target.value)} type="password"/>
-                    <button onClick={loginuser} type="submit" className="login__signInButton">Sign In</button>
-                </form>
-                <button onClick={registeruser} className="login__registerButton">Create an account!</button>
+                <div className="login__title">
+                    <h1>Bejelentkezés</h1>
+                    <h4>Jelentkezzen be adatai megadásával!</h4>
+                </div>
+                <div className="login__info">
+                    <form>
+                        <h5>E-mail</h5>
+                        <input value={useremail} onChange={event => setUserEmail(event.target.value)} type="email"></input>
+                        <h5>Password</h5>
+                        <input value={userpassword} onChange={event => setUserPassword(event.target.value)} type="password"/>
+                        <br></br>
+                        <button onClick={loginuser} type="submit" className="login__signInButton">Bejelentkezés</button>
+                    </form>
+                </div>
+                <hr/>
+                <div className="login__other">
+                    <div className="login__otherHeader">
+                        <h3>Még nem regisztált?</h3>
+                        <h3>Tegye meg most!</h3>
+                    </div>
+                    
+                    <Link to="/register">
+                        <button className="login__registerButton">Regisztráció</button>
+                    </Link>
+                </div>
             </div>
         </div>
     )

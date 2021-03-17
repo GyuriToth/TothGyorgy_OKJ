@@ -1,22 +1,22 @@
 .navlinks {
-    background-color: rgb(65, 65, 65);
-    height: 39px;
+    background-color: rgb(49, 49, 49);
+    height: 30px;
     color: white; 
 }
 
 .navlinks__outer {
-    width: 70%;
+    height: 30px;
+    width: 50%;
     margin: auto;
-    padding: 6px;
 }
 
 .navlinks__outer a {
     color: whitesmoke;
     text-decoration: none;
     cursor: pointer;
-    border: 1px solid rgb(65, 65, 65);
-    margin: 3px;
-    padding: 3px;
+    border: 1px solid rgb(49, 49, 49);
+    margin: 0px;
+    padding: 2px;
 }
 
 .navlinks__outer a:hover {
@@ -25,5 +25,10 @@
 }
 
 .navlinks__inner {
-    margin-top: 3px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-evenly;
+    margin: auto;
 }

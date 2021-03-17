@@ -1,17 +1,24 @@
-import React from 'react';
-import './App.css';
-import Header from './Header';
-import About from './About';
-import Shop from './Shop';
+import React from 'react'
+import './App.css'
+
+import Header from './Header'
+import About from './About'
+import Shop from './Shop'
 import Home from './Home'
-import Login from './Login';
-import Checkout from './Checkout';
-import Footer from './Footer';
-import Navlinks from './Navlinks';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { auth } from './firebase';
-import { useEffect } from 'react';
-import { useStateValue } from './StateProvider';
+import Login from './Login'
+import Checkout from './Checkout'
+import Footer from './Footer'
+import Navlinks from './Navlinks'
+import Register from './Register'
+import Profile from './Profile'
+import Admin from './Admin'
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { auth } from 'firebase'
+import { useEffect } from 'react'
+import { useStateValue } from './StateProvider'
+
+import firebase from 'firebase'
 
 function App() {
   
@@ -21,15 +28,16 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route path="/" exact component={Home}>
+          <Route path="/" exact component={Shop}>
             <Header/>
             <Navlinks/>
-            <Home/>
+            <Shop/>
             <Footer/>
           </Route>
-
-          <Route path="/about" component={About}>
-            <Header/> 
+          
+          <Route path="/admin" component={Admin}>
+            <Header/>
+            <Admin/>
             <Footer/>
           </Route>
 
@@ -39,14 +47,33 @@ function App() {
             <Shop/>
             <Footer/>
           </Route>
+
+          <Route path="/about" component={About}>
+            <Header/> 
+            <Footer/>
+          </Route>
+
+          <Route path="/home" component={Home}>
+            <Header/>
+            <Navlinks/>
+            <Home/>
+            <Footer/>
+          </Route>
           
           <Route path="/login" component={Login}>
             <Login/>
             <Footer/>
           </Route>
 
-          <Route path="/user">
+          <Route path="/register" component={Register}>
+            <Register/>
+            <Footer/>
+          </Route>
 
+          <Route path="/profile" component={Profile}>
+            <Header/>
+            <Profile/>
+            <Footer/>
           </Route>
 
           <Route path="/checkout" component={Checkout}>

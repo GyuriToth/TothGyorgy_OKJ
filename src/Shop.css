@@ -1,14 +1,23 @@
 .shop {
-    max-width: 1500px;
     margin-left: auto;
     margin-right: auto;
+    height: 2000px;
 }
 
-.shop__image {
+.shop__mask {
+    background-color: rgb(54, 148, 255);
+    mask-image: linear-gradient(to bottom, rgba(20, 63, 255), rgba(0,0,0,0));
     width: 100%;
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+    height: 500px;
     z-index: -1;
-    margin-bottom: -150px;
+    margin-bottom: -450px;
+}
+
+.shop__container {
+    max-width: 1500px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
 }
 
 .shop__row {
@@ -16,5 +25,26 @@
     z-index: 1;
     margin-right: 5px;
     margin-left: 5px;
+}
 
+.shop__sidePanel {
+    background-color: #FFF;
+    border: 10px solid gray;
+    height: 400px;
+    width: 15%;
+}
+
+.shop__page {
+    width: 85%;
+    justify-content: flex-end;
+}
+
+.shop__panelTopTrending {
+    margin: 5px;
+    color: #000;
+    font-family: sans-serif;
+}
+
+.shop__panelTopTrending p {
+    font-weight: bold;
 }

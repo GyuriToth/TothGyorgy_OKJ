@@ -1,15 +1,18 @@
-import firebase from 'firebase';
+import firebase from 'firebase'
+import 'firebase/firestore'
 
-const firebaseApp = firebase.initializeApp({
+var firebaseConfig = {
     apiKey: "AIzaSyCjeNLi4OVrXNAqNUioyxfIaYiByUkXhyQ",
     authDomain: "bodorakku-575ca.firebaseapp.com",
     projectId: "bodorakku-575ca",
     storageBucket: "bodorakku-575ca.appspot.com",
     messagingSenderId: "803513792191",
     appId: "1:803513792191:web:43140cbf484eb0b8e7780a"
-});
+  };
+  
+  firebase.initializeApp(firebaseConfig);
 
-const db = firebaseApp.firestore();
 const auth = firebase.auth();
 
-export {db, auth};
+export {auth};
+export default firebase;

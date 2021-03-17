@@ -1,0 +1,58 @@
+.profile {
+    height: 2000px;
+    width: 80%;
+    background-color: whitesmoke;
+    margin: auto;
+}
+
+.profile__container {
+    padding-top: 15px;
+    margin: auto;
+    width: 80%;
+    background-color: whitesmoke;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.profile__title {
+    width: 80%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile__nav {
+    border: 1px solid;
+    margin-left: 10px;
+    width: 10%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+}
+
+.profile__navRow {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.profile__settings {
+    margin: auto;
+    border: 1px solid black;
+    width: 90%;
+    float: right;
+    min-height: 500px;
+}
+
+hr {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.profile__optionContainer {
+    margin: auto;
+    width: 100%;
+}

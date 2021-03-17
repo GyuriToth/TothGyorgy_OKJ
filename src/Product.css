@@ -3,12 +3,12 @@
     flex-direction: column;
     max-height: 400px;
     min-width: 100px;
-    margin: 10px;
+    margin: 4px;
     background-color: #FFF;
     z-index: 1;
     width: 100%;
-    padding: 20px;
     justify-content: flex-end;
+    box-shadow: 3px 3px 5px rgb(98, 98, 98);
 }
 
 .product__rating {
@@ -16,8 +16,8 @@
 }
 
 .product__info {
+    margin: 15px;
     height: 100px;
-    margin-bottom: 15px;
 }
 
 .product__price {
@@ -32,7 +32,8 @@
 }
 
 .product > button {
-    background-color: #F0c14b;
+    width: 100%;
+    background-color: #449bd4;
     border: 1px solid;
-    border-color: #A88734 #9c7e31 #846A29;
+    border-color: #449bd4;
 }

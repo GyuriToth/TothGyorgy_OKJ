@@ -1,10 +1,13 @@
 import React from 'react'
 import './ProductCart.css'
+import CurrencyFormat from 'react-currency-format';
 import { useStateValue } from './StateProvider'
+import AddRoundedIcon from '@material-ui/icons/AddRounded'
+import RemoveRoundedIcon from '@material-ui/icons/RemoveRounded';
 
 
-function ProductCart({id, title, image, price, rating}){
-    
+function ProductCart({id, title, image, price, rating, quantity}){
+
     const [{basket}, dispatch] = useStateValue();
     const removeItem = () => {
         dispatch({
@@ -13,26 +16,54 @@ function ProductCart({id, title, image, price, rating}){
         })
     }
 
+    const increaseQuantity = () => {
+        let qty = document.getElementById("qtty").innerHTML
+        dispatch ({
+            type: 'INCREASE_QUANTITY',
+            id: id,
+            qty: parseInt(qty)
+        })
+    }
+
+    const decreaseQuantity = () => {
+        let qty = document.getElementById("qtty").innerHTML
+        
+        if (qty > 1){
+            dispatch ({
+                type: 'DECREASE_QUANTITY',
+                id: id,
+                qty: parseInt(qty)
+            }) 
+        }
+    }
+
+
     return (
-        <div className="productcart">
-            <img className="productcart__image" src={image} alt="" />
-            <div className="productcart__info">
-                <p className="productcart__title">{title}</p>
-                <p className="productcart__price">{price}</p>
-            
-                <div className="productcart__rating">
-                    {
-                        Array(rating)
-                        .fill()
-                        .map((_) => (
-                            <span>*</span>
-                        ))
-                    }
+            <div className="productcart">
+                <img className="productcart__image" src={image} alt="" />
+
+                <div className="productcart__info">
+                    <div className="productcart__topContainer">
+                        <p className="productcart__title">{title}</p>
+                        <span><p>Price: </p><CurrencyFormat value={price} displayType={'text'} thousandSeparator={true}/></span>
+                        
+                        
+                    </div>
+                    
+                    <div className="productcart__bottomContainer">
+                        <div className="productcart__quantity">
+                            <p className="productcart__quantityMinus" onClick={decreaseQuantity}><RemoveRoundedIcon/></p>
+                            <p className="productcart__quantityValue" id="qtty">{quantity}</p>
+                            <p className="productcart__quantityPlus" onClick={increaseQuantity}><AddRoundedIcon/></p>
+                        </div>
+
+                        <button className="productcart__removeButton" onClick={removeItem}>Remove from the cart</button>
+                    </div>
                 </div>
-                <button onClick={removeItem}>Remove from the cart</button>
             </div>
-        </div>
-    )
+            )
+
+
 }
 
-export default ProductCart
+export default ProductCart;

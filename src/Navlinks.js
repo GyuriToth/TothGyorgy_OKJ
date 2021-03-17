@@ -6,11 +6,7 @@ function Navlinks (){
         <div className="navlinks">
             <div className="navlinks__outer">
                 <div className="navlinks__inner">
-                    <Link>Today's deals</Link>
-                    <Link>Customer Service</Link>
-                    <Link>Gift Cards</Link>
-                    <Link>Registry</Link>
-                    <Link>Sell</Link>
+                    <Link><div>Fontos! Motorakksi Jogszabály 2021!</div></Link>
                 </div>
             </div>
         </div>

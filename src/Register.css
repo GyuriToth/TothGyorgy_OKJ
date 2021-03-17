@@ -1,4 +1,4 @@
-.login {
+.register {
     background-color:whitesmoke;
     height: 100vh;
     display: flex;
@@ -7,20 +7,20 @@
     color: lightgray;
 }
 
-.login__logo {
+.register__logo {
     width: 100px;
     object-fit: contain;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.login__title {
+.register__title {
     color:rgb(46, 46, 46);
     margin-bottom: 20px;
     text-align: center;
 }
 
-.login__container {
+.register__container {
     background-color: whitesmoke ;
     border: 1px solid whitesmoke;
     border-radius: 1px;
@@ -32,7 +32,7 @@
     box-shadow: 8px 8px 10px grey;
 }
 
-.login__info {
+.register__info {
     justify-content: center;
     color:  rgb(46, 46, 46);
     width: 80%;
@@ -42,12 +42,7 @@
     align-items: center;
 }
 
-.login__infoHeader {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.login__info input {
+.register__info input {
     font-size: 18px;
     min-height: 24px;
     margin: auto;
@@ -57,23 +52,23 @@
     border-radius: 3px;
 }
 
-.login__info h5 {
+.register__info h5 {
     margin-top: 10px;
 }
 
-.login__other {
+.register__other {
     width: 70%;
     height: 100%;
     margin: auto;
 }
 
-.login__otherHeader {
+.register__otherHeader {
     text-align: center;
     color:rgb(46, 46, 46);
     
 }
 
-.login__signInButton, .login__registerButton {
+.register__signInButton, .register__registerButton {
     background-color: #449bd4;
     color: #111;
     border: 1px solid;
@@ -81,7 +76,7 @@
     border-radius: 2px;
     margin-top: 5px;
     width: 100%;
-    height: 40px;
+    height: 30px;
     padding: 0px;
     cursor: pointer;
 }

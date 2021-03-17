@@ -6,6 +6,13 @@
     top: 0;
     z-index: 100;
     padding: 10px 10px;
+    justify-content: space-between;
+    box-shadow: 0 0 2px #000, 0 0 12px #000;
+}
+
+.header__logoBox {
+    width: 100%;
+    align-self: flex-start;
 }
 
 .header__logo {
@@ -13,33 +20,19 @@
     object-fit: contain;
 }
 
-.header__search{
-    display: flex;
-    flex: 1;
-}
-
-.header__searchInput {
-    height: 12px;
-    padding: 10px;
-    border: none;
-    width: 100%;
-}
-
-.header__searchIcon {
-    padding: 5px;
-    height: 22px !important;
-    background-color: rgb(78, 85, 194);
-}
-
 .header__nav {
     display: flex;
-    width: 100%;
+    width: 80%;
     justify-content: space-evenly;
 }
 
 .header__link{
     color: white;
     text-decoration: none;
+}
+
+.header__link:hover {
+    cursor: pointer;
 }
 
 .header__option {
@@ -49,14 +42,10 @@
     margin-right: 10px;
 }
 
-.header__optionLineOne {
-    font-size: 10px;
+.header__optionLine {
+    font-size: 18px;
 }
 
-.header__optionLineTwo {
-    font-size: 13px;
-    font-weight: 800;
-}
 
 .header__optionCart {
     display: flex;
@@ -65,6 +54,22 @@
 }
 
 .header__productCount{
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.header__toolbar {
+    justify-content: baseline;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.header__optionUser {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap:nowrap;
 }

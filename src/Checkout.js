@@ -29,7 +29,7 @@ function Checkout (){
                                     image={item.image}
                                     price={item.price}
                                     quantity={item.quantity}
-                                 />
+                                />
                              ))
                         }
                     </div>

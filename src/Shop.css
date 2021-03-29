@@ -14,13 +14,13 @@
 }
 
 .shop__container {
-    max-width: 1500px;
     margin: auto;
     display: flex;
     flex-direction: row;
 }
 
 .shop__row {
+    flex-wrap: wrap;
     display: flex;
     z-index: 1;
     margin-right: 5px;
@@ -29,7 +29,6 @@
 
 .shop__sidePanel {
     background-color: #FFF;
-    border: 10px solid gray;
     height: 400px;
     width: 15%;
 }

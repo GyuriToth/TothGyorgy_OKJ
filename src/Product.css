@@ -1,14 +1,13 @@
 .product {
+    flex: 1 1 15%;
     display: flex;
     flex-direction: column;
-    max-height: 400px;
-    min-width: 100px;
     margin: 4px;
     background-color: #FFF;
     z-index: 1;
-    width: 100%;
     justify-content: flex-end;
     box-shadow: 3px 3px 5px rgb(98, 98, 98);
+    max-width: 15%;
 }
 
 .product__rating {

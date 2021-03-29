@@ -15,13 +15,12 @@ export const FormInput=()=>{
     const templateId = process.env.REACT_APP_EMAILJS_TEMPLATEID
     const serviceId = process.env.REACT_APP_EMAILJS_SERVICEID
 
-    console.log(serviceId)
     const templateParams = {
         userName: name,
         html: html,
         userEmail: email
     }
-    emailjs.send('tothgyorgy_service', 'tothgyorgy_template', templateParams)
+    emailjs.send(serviceId, templateId, templateParams)
         .then((response) => {
             console.log('SUCCESS!', response.status, response.text);
         })

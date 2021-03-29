@@ -1,9 +1,10 @@
-import react from 'react';
-import './Product.css';
-import { useStateValue } from './StateProvider';
-import StarIcon from '@material-ui/icons/Star';
+import react from 'react'
+import './Product.css'
+import { useStateValue } from './StateProvider'
+import StarIcon from '@material-ui/icons/Star'
+import firebase from 'firebase'
 
-function Product({id,title,image,price,rating}){
+function Product({id,title,image,price}){
     
     const [{basket}, dispatch] = useStateValue();
 
@@ -17,7 +18,6 @@ function Product({id,title,image,price,rating}){
                     title: title,
                     image: image,
                     price: price,
-                    rating: rating,
                     quantity: 1
                 }  
             })
@@ -42,15 +42,6 @@ function Product({id,title,image,price,rating}){
                     <small>$</small>
                     <strong>{price}</strong>
                 </p>
-                <div className="product__rating">
-                    {
-                        Array(rating)
-                            .fill()
-                            .map((_) => (
-                                <p><StarIcon style={{fill: "gold"}}/></p>
-                            ))
-                    }
-                </div>
             </div>
             <img src={image} alt="" />
             <button onClick={addToBasket}>Kosárba</button>

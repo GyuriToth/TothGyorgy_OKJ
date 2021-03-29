@@ -6,7 +6,7 @@ import AddRoundedIcon from '@material-ui/icons/AddRounded'
 import RemoveRoundedIcon from '@material-ui/icons/RemoveRounded';
 
 
-function ProductCart({id, title, image, price, rating, quantity}){
+function ProductCart({id, title, image, price, quantity}){
 
     const [{basket}, dispatch] = useStateValue();
     const removeItem = () => {

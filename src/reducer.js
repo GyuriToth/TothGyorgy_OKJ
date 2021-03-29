@@ -27,28 +27,28 @@ const reducer = (state, action) => {
             return {...state, basket: newcart}
 
         case 'INCREASE_QUANTITY':
-            let increasedBasket = [...state.basket]
-            increasedBasket.forEach(e => {
-                if (e.id == action.id){
-                    e.quantity=action.qty+1
-                }
-            });
-
-            return {
-                ...state, basket: increasedBasket
-            }
+            let plusCart=[...state.basket]
+            const plusIndex=state.basket.findIndex(item=>item.id==action.id)
+            plusCart.splice(plusIndex,1)
+            plusCart.push(action.item)
+            return{...state, basket:plusCart }
 
         case 'DECREASE_QUANTITY':
-            let decreasedBasket = [...state.basket]
-            decreasedBasket.forEach(e => {
-                if (e.id == action.id){
-                    e.quantity=action.qty-1
-                }
-            });
-
-            return {
-                ...state, basket: decreasedBasket
+            let minusCart=[...state.basket]
+            const minusIndex=state.basket.findIndex(item=>item.id==action.id)
+            if(action.item.quantity>0){
+                 minusCart.splice(minusIndex,1)
+                 minusCart.push(action.item)
             }
+            return{...state, basket:minusCart }
+
+        case 'MODIFY_QUANTITY':
+            let mCart=[...state.basket]
+            mCart.forEach(e=>{
+                if(e.id==action.id)
+                    e.quantity=action.qty+1
+            })
+            return{...state, basket: mCart }
     }
 }
 

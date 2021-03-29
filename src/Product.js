@@ -25,7 +25,7 @@ function Product({id,title,image,price,rating}){
         else {
             let qty = basket[index].quantity;
             dispatch ({
-                type: 'INCREASE_QUANTITY',
+                type: 'MODIFY_QUANTITY',
                 id: id,
                 qty: qty,
             })

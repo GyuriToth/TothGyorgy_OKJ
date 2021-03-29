@@ -22,16 +22,15 @@ function Checkout (){
                     <div>
                         <h2 className="shoppingbaskettitle">Items in the Basket </h2>
                         {
-                            basket.map(item => (
+                             [...basket].sort((a,b)=>a.id>b.id ? 1:-1).map(item=>(
                                 <ProductCart
                                     id={item.id}
                                     title={item.title}
-                                    image={item.image}
+                                    img={item.img}
                                     price={item.price}
-                                    rating={item.rating}
                                     quantity={item.quantity}
-                                />
-                            ))
+                                 />
+                             ))
                         }
                     </div>
                 )

@@ -17,24 +17,32 @@ function ProductCart({id, title, image, price, rating, quantity}){
     }
 
     const increaseQuantity = () => {
-        let qty = document.getElementById("qtty").innerHTML
         dispatch ({
             type: 'INCREASE_QUANTITY',
             id: id,
-            qty: parseInt(qty)
+            item:{
+                id:id,
+                title:title,
+                image:image,
+                price:price,
+                quantity:quantity+1
+            }
         })
     }
 
     const decreaseQuantity = () => {
-        let qty = document.getElementById("qtty").innerHTML
-        
-        if (qty > 1){
-            dispatch ({
-                type: 'DECREASE_QUANTITY',
+        dispatch({
+            type:'DECREASE_QUANTITY',
+            id: id,
+            item:{
                 id: id,
-                qty: parseInt(qty)
-            }) 
-        }
+                title: title,
+                image : image,
+                price : price,
+                quantity : quantity-1
+            }
+        })
+            
     }
 
 

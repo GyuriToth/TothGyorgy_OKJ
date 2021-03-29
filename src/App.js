@@ -12,6 +12,7 @@ import Navlinks from './Navlinks'
 import Register from './Register'
 import Profile from './Profile'
 import Admin from './Admin'
+import { Order } from './Order'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { auth } from 'firebase'
@@ -79,6 +80,12 @@ function App() {
           <Route path="/checkout" component={Checkout}>
             <Header/>
             <Checkout/>
+            <Footer/>
+          </Route>
+
+          <Route path="/order" component={Order}>
+            <Header/>
+            <Order/>
             <Footer/>
           </Route>
         </Switch>

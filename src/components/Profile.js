@@ -1,8 +1,7 @@
 import React from "react"
-import './App.css'
-import './Profile.css'
+import '../style/App.css'
 
-import PersonalInfoForm from './components/personal-info'
+import PersonalInfoForm from './personal-info'
 
 function Profile () {
     return (

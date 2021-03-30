@@ -1,7 +1,7 @@
 import React from 'react'
-import './ProductCart.css'
+import '../style/App.css'
 import CurrencyFormat from 'react-currency-format';
-import { useStateValue } from './StateProvider'
+import { useStateValue } from '../StateProvider'
 import AddRoundedIcon from '@material-ui/icons/AddRounded'
 import RemoveRoundedIcon from '@material-ui/icons/RemoveRounded';
 

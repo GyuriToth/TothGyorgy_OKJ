@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+}
+
+.App {
+  background-color: rgb(209, 209, 209);
+}
+
+/*Header*/
+.header {
+  background-color: rgb(49, 49, 49);
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 10px 10px;
+  justify-content: space-between;
+  box-shadow: 0 0 2px #000, 0 0 12px #000;
+}
+
+  .header__logoBox {
+    width: 100%;
+    align-self: flex-start;
+  }
+
+  .header__logo {
+    width: 100px;
+    object-fit: contain;
+  }
+
+  .header__nav {
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly;
+  }
+
+  .header__link{
+    color: white;
+    text-decoration: none;
+  }
+
+  .header__link:hover {
+    cursor: pointer;
+  }
+
+  .header__option {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .header__optionLine {
+    font-size: 18px;
+  }
+
+
+  .header__optionCart {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .header__productCount{
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+
+  .header__toolbar {
+    justify-content: baseline;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .header__optionUser {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap:nowrap;
+  }
+
+/*Navlinks*/
+.navlinks {
+  background-color: rgb(49, 49, 49);
+  height: 30px;
+  color: white; 
+}
+
+  .navlinks__outer {
+    height: 30px;
+    width: 50%;
+    margin: auto;
+  }
+
+  .navlinks__outer a {
+    color: whitesmoke;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid rgb(49, 49, 49);
+    margin: 0px;
+    padding: 2px;
+  }
+
+  .navlinks__outer a:hover {
+    border: 1px solid #fff;
+    border-radius: 4px;
+  }
+
+  .navlinks__inner {
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-evenly;
+    margin: auto;
+  }
+
+/*Footer*/
+.footer {
+  background-color: rgb(49, 49, 49);
+  width: 100%;
+  min-height: 100px;
+  color: #FFF;
+  padding-bottom: 10px;
+}
+
+  .footer__top {
+    background-color: rgb(65, 65, 65);
+    min-height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;   
+  }
+
+  .footer__links {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10px;
+  }
+
+  .footer_linkCol {
+    display: flex;
+    flex-direction: column;
+  }
+
+/*Shop*/
+  .shop {
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100vh;
+  }
+
+  .shop hr {
+    width: 85%;
+    margin-top: 5px;
+  }
+
+  .shop__filterBar {
+    width: 85%;
+    padding-top: 10px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .shop__filterBarBox {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .shop__filterBarBoxRow {
+  }
+
+  .shop__container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .shop__row {
+    flex-wrap: wrap;
+    display: flex;
+    z-index: 1;
+    justify-content: space-between;
+  }
+
+  .shop__page {
+    width: 85%;
+    margin: auto;
+  }
+
+  .shop__panelTopTrending {
+    margin: 5px;
+    color: #000;
+    font-family: sans-serif;
+  }
+
+  .shop__panelTopTrending p {
+    font-weight: bold;
+  }
+
+/*Product*/
+.product {
+  flex: 1 1 15%;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF;
+  z-index: 1;
+  justify-content: flex-end;
+  box-shadow: 3px 3px 5px rgb(98, 98, 98);
+  max-width: 15%;
+  min-width: 70px;
+  margin-bottom: 10px;
+}
+
+  .product__rating {
+    display: flex;
+  }
+
+  .product__info {
+    margin: 15px;
+    height: 100px;
+  }
+
+  .product__price {
+    margin-top: 5px;
+  }
+
+  .product > img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
+  }
+
+  .product > button {
+    width: 100%;
+    background-color: #449bd4;
+    border: 1px solid;
+    border-color: #449bd4;
+  }

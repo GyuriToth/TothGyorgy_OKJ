@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useStateValue } from './StateProvider';
+import { useStateValue } from '../StateProvider';
 import { FormInput } from './Message'
 
 

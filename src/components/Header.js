@@ -3,13 +3,11 @@ import LocalMallIcon from '@material-ui/icons/LocalMall'
 import PersonIcon from '@material-ui/icons/Person'
 import PersonAddIcon from '@material-ui/icons/PersonAdd'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
-import './App.css'
-import './Header.css'
+import '../style/App.css'
 import { Link } from 'react-router-dom'
-import logo from './img/logo.png'
-import { useStateValue } from './StateProvider'
-import { auth } from './firebase'
-import shop from './Shop.js'
+import logo from '../img/logo.png'
+import { useStateValue } from '../StateProvider'
+import { auth } from '../firebase'
 
 function Header() {
 

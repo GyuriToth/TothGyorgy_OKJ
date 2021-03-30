@@ -1,4 +1,4 @@
-import React, { useDebugValue, useState } from 'react'
+import React, { useState } from 'react'
 import '../Profile.css'
 import firebase from '../firebase'
 import { useStateValue } from '../StateProvider'
@@ -12,8 +12,6 @@ const PersonalInfoForm = () => {
     const [postalCode, setPostalCode] = useState('')
     const [city, setCity] = useState('')
     const [address, setAddress] = useState ('')
-
-    console.log(loggedinuser.email)
     var db = firebase.firestore()
 
 

@@ -1,10 +1,11 @@
-import React from 'react'
-import './App.css'
-import './Footer.css'
+import React, {useState} from 'react'
+import '../style/App.css'
 import { Link } from 'react-router-dom'
-import Admin from './Admin'
+import { useStateValue } from '../StateProvider'
 
 function Footer () {
+    const [{loggedinuser}, dispatch] = useStateValue()
+    const admin_email = process.env.REACT_APP_ADMIN_EMAIL
     return (
         <div className="footer">
             <div className="footer__top">
@@ -19,7 +20,15 @@ function Footer () {
                 <div className="footer__linkCol">
                     <div>Vásárlási feltételek</div>
                     <div>Adatkezelési tájékoztató</div>
+                    {
+                    loggedinuser?.email == admin_email
+                    ?
                     <Link to="/admin"><div>ADMIN</div></Link>
+                    :
+                    console.log('Admin login')
+                    }   
+                    
+                    
                 </div>
 
                 <div className="footer__linkCol">

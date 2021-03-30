@@ -1,29 +1,21 @@
 import React from 'react'
-import './App.css'
+import './style/App.css'
 
-import Header from './Header'
-import About from './About'
-import Shop from './Shop'
-import Home from './Home'
-import Login from './Login'
-import Checkout from './Checkout'
-import Footer from './Footer'
-import Navlinks from './Navlinks'
-import Register from './Register'
-import Profile from './Profile'
-import Admin from './Admin'
-import { Order } from './Order'
+import Header from './components/Header'
+import Shop from './components/Shop'
+import Home from './components/Home'
+import Login from './components/Login'
+import Checkout from './components/Checkout'
+import Footer from './components/Footer'
+import Navlinks from './components/Navlinks'
+import Register from './components/Register'
+import Profile from './components/Profile'
+import Admin from './components/Admin'
+import { Order } from './components/Order'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { auth } from 'firebase'
-import { useEffect } from 'react'
-import { useStateValue } from './StateProvider'
-
-import firebase from 'firebase'
 
 function App() {
-  
-  const [{loggedinuser, basket}, dispatch] = useStateValue();
 
   return (
     <Router>
@@ -46,11 +38,6 @@ function App() {
             <Header/>
             <Navlinks/>
             <Shop/>
-            <Footer/>
-          </Route>
-
-          <Route path="/about" component={About}>
-            <Header/> 
             <Footer/>
           </Route>
 
@@ -93,7 +80,5 @@ function App() {
     </Router>
   );
 }
-
-
 
 export default App;

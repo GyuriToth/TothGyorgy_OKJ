@@ -1,8 +1,5 @@
-import react from 'react'
-import './Product.css'
-import { useStateValue } from './StateProvider'
-import StarIcon from '@material-ui/icons/Star'
-import firebase from 'firebase'
+import '../style/App.css'
+import { useStateValue } from '../StateProvider'
 
 function Product({id,title,image,price}){
     

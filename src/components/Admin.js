@@ -1,4 +1,4 @@
-import './Admin.css'
+import '../style/App.css'
 import React from 'react'
 
 function Admin () {

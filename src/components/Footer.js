@@ -3,12 +3,17 @@ import '../style/App.css'
 import { Link } from 'react-router-dom'
 import { useStateValue } from '../StateProvider'
 
-function Footer () {
+const Footer = () => {
     const [{loggedinuser}, dispatch] = useStateValue()
     const admin_email = process.env.REACT_APP_ADMIN_EMAIL
+
+    function topFunction() {
+        document.documentElement.scrollTop = 0;
+    }
+
     return (
         <div className="footer">
-            <div className="footer__top">
+            <div className="footer__top" onClick={topFunction}>
                 <p>Back to Top</p>
             </div>
             <div className="footer__links">

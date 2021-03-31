@@ -10,7 +10,7 @@ import Footer from './components/Footer'
 import Navlinks from './components/Navlinks'
 import Register from './components/Register'
 import Profile from './components/Profile'
-import Admin from './components/Admin'
+import { Admin } from './components/Admin'
 import { Order } from './components/Order'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
@@ -24,56 +24,56 @@ function App() {
           <Route path="/" exact component={Shop}>
             <Header/>
             <Navlinks/>
-            <Shop/>
             <Footer/>
-          </Route>
+            <Shop/>
+            </Route>
           
           <Route path="/admin" component={Admin}>
             <Header/>
-            <Admin/>
             <Footer/>
-          </Route>
+            <Admin/>
+            </Route>
 
           <Route path="/shop" component={Shop}>
             <Header/>
             <Navlinks/>
-            <Shop/>
             <Footer/>
+            <Shop/>
           </Route>
 
           <Route path="/home" component={Home}>
             <Header/>
             <Navlinks/>
-            <Home/>
             <Footer/>
+            <Home/>
           </Route>
           
           <Route path="/login" component={Login}>
-            <Login/>
             <Footer/>
+            <Login/>
           </Route>
 
           <Route path="/register" component={Register}>
-            <Register/>
             <Footer/>
+            <Register/>
           </Route>
 
           <Route path="/profile" component={Profile}>
             <Header/>
-            <Profile/>
             <Footer/>
+            <Profile/>
           </Route>
 
           <Route path="/checkout" component={Checkout}>
             <Header/>
-            <Checkout/>
             <Footer/>
+            <Checkout/>
           </Route>
 
           <Route path="/order" component={Order}>
             <Header/>
-            <Order/>
             <Footer/>
+            <Order/>
           </Route>
         </Switch>
       </div>

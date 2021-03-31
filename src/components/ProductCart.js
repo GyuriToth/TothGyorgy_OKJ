@@ -65,7 +65,7 @@ function ProductCart({id, title, image, price, quantity}){
                             <p className="productcart__quantityPlus" onClick={increaseQuantity}><AddRoundedIcon/></p>
                         </div>
 
-                        <button className="productcart__removeButton" onClick={removeItem}>Remove from the cart</button>
+                        <button className="button__remove" onClick={removeItem}>Remove from the cart</button>
                     </div>
                 </div>
             </div>

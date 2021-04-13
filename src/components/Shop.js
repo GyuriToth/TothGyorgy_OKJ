@@ -23,9 +23,9 @@ function Shop() {
               <select className="shop__filterSelect" onChange={e => setSelectedCategory(e.currentTarget.value)}>
                 <option value="0">Összes</option>
                   {
-                  category.map (item =>
-                    <option value={item.id}>{item.id}</option>
-                  )
+                    category.map (item =>
+                      <option value={item.id}>{item.id}</option>
+                    )
                   }
               </select>
             </div>

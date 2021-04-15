@@ -13,7 +13,7 @@ function Checkout (){
             <div className="checkout__left">
             
             {
-                basket.length == 0 ? (
+                basket.length === 0 ? (
                     <div>
                         <h2 className="checkout__title">Your Shopping basket is empty.</h2>
                         <p>You have no items in your basket.</p>

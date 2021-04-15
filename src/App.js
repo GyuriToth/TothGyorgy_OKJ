@@ -24,56 +24,56 @@ function App() {
           <Route path="/" exact component={Shop}>
             <Header/>
             <Navlinks/>
-            <Footer/>
             <Shop/>
-            </Route>
+            <Footer/>
+          </Route>
           
           <Route path="/admin" component={Admin}>
             <Header/>
-            <Footer/>
             <Admin/>
+            <Footer/>
             </Route>
 
           <Route path="/shop" component={Shop}>
             <Header/>
             <Navlinks/>
-            <Footer/>
             <Shop/>
+            <Footer/>
           </Route>
 
           <Route path="/home" component={Home}>
             <Header/>
             <Navlinks/>
-            <Footer/>
             <Home/>
+            <Footer/>
           </Route>
           
           <Route path="/login" component={Login}>
-            <Footer/>
             <Login/>
+            <Footer/>
           </Route>
 
           <Route path="/register" component={Register}>
-            <Footer/>
             <Register/>
+            <Footer/>
           </Route>
 
           <Route path="/profile" component={Profile}>
             <Header/>
-            <Footer/>
             <Profile/>
+            <Footer/>
           </Route>
 
           <Route path="/checkout" component={Checkout}>
             <Header/>
-            <Footer/>
             <Checkout/>
+            <Footer/>
           </Route>
 
           <Route path="/order" component={Order}>
             <Header/>
-            <Footer/>
             <Order/>
+            <Footer/>
           </Route>
         </Switch>
       </div>

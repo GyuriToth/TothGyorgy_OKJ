@@ -148,8 +148,6 @@
     min-height: 100px;
     color: #FFF;
     padding-bottom: 10px;
-    position: absolute;
-    bottom: 0;
   }
   .footer__top {
     background-color: rgb(65, 65, 65);
@@ -261,6 +259,17 @@
     background-color: #206695;
     border-color:  #206695;
     color: whitesmoke;
+  }
+
+  .product__description {
+    background-color:rgb(49,49,49) !important;
+    border-color:rgb(49, 49, 49) !important;
+    color: whitesmoke;
+  }
+
+  .product__description:hover {
+    background-color:rgb(65, 65, 65) !important;
+    border-color:rgb(65,65,65) !important;
   }
 
 /*Checkout*/

@@ -1,4 +1,3 @@
-import React from 'react'
 import '../style/App.css'
 import CurrencyFormat from 'react-currency-format';
 import { useStateValue } from '../StateProvider'
@@ -8,7 +7,7 @@ import RemoveRoundedIcon from '@material-ui/icons/RemoveRounded';
 
 function ProductCart({id, title, image, price, quantity}){
 
-    const [{basket}, dispatch] = useStateValue();
+    const [dispatch] = useStateValue();
     const removeItem = () => {
         dispatch({
             type: 'REMOVE_FROM_CART',

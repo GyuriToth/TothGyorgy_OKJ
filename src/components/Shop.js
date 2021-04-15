@@ -37,35 +37,38 @@ function Shop() {
         <div className="shop__page">
           <div className="shop__row">
             {
-              selectedCategory == "0" ?
+              selectedCategory === "0" ?
 
               products.map(product=>
-                  <Product key={product.id}
-                      id={product.id}
-                      title={product.title}
-                      price={product.price}
-                      quantity={product.quantity}
-                      image={product.image}
-                  />
+                <Product 
+                  key={product.id}
+                  id={product.id}
+                  title={product.title}
+                  price={product.price}
+                  quantity={product.quantity}
+                  image={product.image}
+                  desc={product.desc}
+                />
               )
-
-            :
-              products.filter( item => item.category==selectedCategory ).map(product=>
+              :
+              products.filter( item => item.category===selectedCategory ).map(product=>
                 <Product key={product.id}
                     id={product.id}
                     title={product.title}
                     price={product.price}
                     quantity={product.quantity}
                     image={product.image}
+                    desc={product.desc}
                 />
               )
-
             }
+
           </div>
         </div>
       </div>
     </div>
   );
 }
+
 
 export default Shop;

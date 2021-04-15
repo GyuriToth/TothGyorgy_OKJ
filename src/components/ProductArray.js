@@ -1,5 +1,5 @@
 import firebase from 'firebase'
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const ProductArray=()=>{
     const [products, setProducts]=useState([])

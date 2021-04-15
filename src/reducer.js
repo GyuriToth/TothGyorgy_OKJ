@@ -5,6 +5,10 @@ export const initialState = {
 
 const reducer = (state, action) => {
     switch(action.type){
+        default:
+            return {
+                ...state
+            }
         case 'ADD_TO_BASKET':
             return {
                 ...state,
@@ -28,14 +32,14 @@ const reducer = (state, action) => {
 
         case 'INCREASE_QUANTITY':
             let plusCart=[...state.basket]
-            const plusIndex=state.basket.findIndex(item=>item.id==action.id)
+            const plusIndex=state.basket.findIndex(item=>item.id===action.id)
             plusCart.splice(plusIndex,1)
             plusCart.push(action.item)
             return{...state, basket:plusCart }
 
         case 'DECREASE_QUANTITY':
             let minusCart=[...state.basket]
-            const minusIndex=state.basket.findIndex(item=>item.id==action.id)
+            const minusIndex=state.basket.findIndex(item=>item.id===action.id)
             if(action.item.quantity>0){
                  minusCart.splice(minusIndex,1)
                  minusCart.push(action.item)
@@ -45,7 +49,7 @@ const reducer = (state, action) => {
         case 'MODIFY_QUANTITY':
             let mCart=[...state.basket]
             mCart.forEach(e=>{
-                if(e.id==action.id)
+                if(e.id===action.id)
                     e.quantity=action.qty+1
             })
             return{...state, basket: mCart }

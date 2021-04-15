@@ -1,10 +1,10 @@
-import React, {useState} from 'react'
+import React from 'react'
 import '../style/App.css'
 import { Link } from 'react-router-dom'
 import { useStateValue } from '../StateProvider'
 
 const Footer = () => {
-    const [{loggedinuser}, dispatch] = useStateValue()
+    const [{loggedinuser}] = useStateValue()
     const admin_email = process.env.REACT_APP_ADMIN_EMAIL
 
     function topFunction() {
@@ -26,11 +26,11 @@ const Footer = () => {
                     <div>Vásárlási feltételek</div>
                     <div>Adatkezelési tájékoztató</div>
                     {
-                    loggedinuser?.email == admin_email
+                    loggedinuser?.email === admin_email
                     ?
                     <Link to="/admin"><div>ADMIN</div></Link>
                     :
-                    console.log('Admin login')
+                    console.log('')
                     }   
                     
                     

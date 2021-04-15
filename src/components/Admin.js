@@ -28,9 +28,9 @@ export const Admin=()=>{
             .add({
                 title,
                 desc,
-                price:parseInt(price),
-                image:photoUrl,
-                category
+                price: parseInt(price),
+                image: photoUrl,
+                category: category
             })
     }
 
@@ -54,22 +54,22 @@ export const Admin=()=>{
                     </select>
                 </div>
 
-                <div className=''>
+                <div>
                     <label>Leírása:</label>
-                    <input className='' type='text' value={desc} onChange={(e=>setDesc(e.currentTarget.value))}/>
+                    <input type='text' value={desc} onChange={(e=>setDesc(e.currentTarget.value))}/>
                 </div>
-                <div className=''>
+                <div>
                     <label>Fotó:</label>
-                    <input className='' type='file'  onChange={onFileChange}/>
+                    <input type='file'  onChange={onFileChange}/>
                 </div>
-                <div className=''>
-                    <div className=''>
+                <div>
+                    <div>
                          <label>Termék ára:</label>
-                        <input className='' type='number' value={price} onChange={(e=>setPrice(e.currentTarget.value))}/>
+                        <input type='number' value={price} onChange={(e=>setPrice(e.currentTarget.value))}/>
                     </div>
                 </div>
-                <div className="">
-                    <button className='' type='submit'>Mentés</button>
+                <div>
+                    <button type='submit'>Mentés</button>
                 </div>
                 
             </form>

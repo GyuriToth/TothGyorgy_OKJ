@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../style/App.css';
+import '../style/Register.css';
 import { Link, useHistory } from 'react-router-dom';
 import logo from '../img/logo.png';
 import firebase, { auth } from '../firebase';

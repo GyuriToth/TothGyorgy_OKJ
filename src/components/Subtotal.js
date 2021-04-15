@@ -8,7 +8,7 @@ function Subtotal(){
     const getCartTotal = (basket) => 
     basket?.reduce((amount, item) => item.price * item.quantity + amount, 0);
 
-    const [{basket}, dispatch] = useStateValue();
+    const [{basket}] = useStateValue();
     
     return (
         <div className="subtotal">

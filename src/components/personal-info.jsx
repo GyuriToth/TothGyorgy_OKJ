@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import '../Profile.css'
+import '../style/Profile.css'
 import firebase from '../firebase'
 import { useStateValue } from '../StateProvider'
 
 const PersonalInfoForm = () => {
-    const [{loggedinuser}, dispatch] = useStateValue();
+    const [{loggedinuser}] = useStateValue();
 
     const [name, setName] = useState('')
     const [birthday, setBirthDay] = useState('')

@@ -15,15 +15,15 @@ function Checkout (){
             {
                 basket.length === 0 ? (
                     <div>
-                        <h2 className="checkout__title">Your Shopping basket is empty.</h2>
-                        <p>You have no items in your basket.</p>
+                        <h2 className="checkout__title">A kosár üres.</h2>
                     </div>
                 ) : (
                     <div>
-                        <h2 className="shoppingbaskettitle">Items in the Basket </h2>
+                        <h2 className="shoppingbaskettitle">Kosár tartalma:</h2>
                         {
                              [...basket].sort((a,b)=>a.id>b.id ? 1:-1).map(item=>(
                                 <ProductCart
+                                    key={item.key}
                                     id={item.id}
                                     title={item.title}
                                     image={item.image}

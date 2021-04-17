@@ -10,19 +10,19 @@ export const Order=()=>{
     const getCartTotal=(basket)=>basket?.reduce((tot,item)=>item.price*item.quantity+tot,0)
 
     return(
-        <div >
+        <div>
           <h1>Összefoglaló</h1>
           {
           [...basket].sort((a,b)=>a.id>b.id ? 1:-1).map(item=>
-            <div className=''>
+            <div>
               {
                 /*<div className=''>{item.id}</div>*/
               }
-              <div className=''>{item.title}</div>
-              <div className=''>{item.price}</div>
-              <div className=''>{item.quantity}</div>
-              <div className=''><img src={item.image} alt="" width='50'/></div>
-              <div className=''>ár: {item.price*item.quantity} Ft</div>
+              <div>{item.title}</div>
+              <div>{item.price}</div>
+              <div>{item.quantity}</div>
+              <div><img src={item.image} alt="" width='50'/></div>
+              <div>ár: {item.price*item.quantity} Ft</div>
             </div>
 
           )

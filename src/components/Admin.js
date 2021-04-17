@@ -2,15 +2,21 @@ import React, { useState } from 'react'
 import firebase from 'firebase'
 
 import { CategoryArray } from './CategoryArray'
+import { ProductRow } from './Product'
+import { ProductArray } from './ProductArray'
 
 export const Admin=()=>{
+    const products = ProductArray()
+
     const categories = CategoryArray()
 
-    const [title,setTitle]=useState('')
-    const [price,setPrice]=useState('')
-    const [desc,setDesc]=useState('')
-    const [photoUrl,setPhotoUrl]=useState(null)
-    const [category, setCategory] =useState('')
+    const [title,setTitle] = useState('')
+    const [price,setPrice] = useState('')
+    const [desc,setDesc] = useState('')
+    const [photoUrl,setPhotoUrl] = useState(null)
+    const [category, setCategory]  = useState('')
+
+    //var product_query = db.collection('products').where(id,'==', product_id);
 
     const onFileChange=async(e)=>{
         const file=e.target.files[0]
@@ -72,6 +78,19 @@ export const Admin=()=>{
                     <button type='submit'>Mentés</button>
                 </div>
                 
+                {
+                    products.map(product=>
+                        <ProductRow 
+                            key={product.id}
+                            id={product.id}
+                            title={product.title}
+                            price={product.price}
+                            image={product.image}
+                            desc={product.desc}
+                        />
+                    )
+                }
+
             </form>
         </React.Fragment>
     )

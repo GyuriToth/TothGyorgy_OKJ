@@ -10,7 +10,7 @@ export const ProductArray=()=>{
             .collection('products')
             .onSnapshot((snapshot)=>{
                 const newProduct=snapshot.docs.map((doc)=>({
-                    id:doc.id,
+                    id: doc.id,
                     ...doc.data()
                 }))
                 setProducts(newProduct)

@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 import ReactCardFlip from 'react-card-flip'
 
-function Product({id,title,image,price, desc}){
+function Product({id, title, image, price, desc}){
     
     const [{basket}, dispatch] = useStateValue();
 
@@ -45,8 +45,8 @@ function Product({id,title,image,price, desc}){
                     <div className="product__info">
                         <p>{title}</p>
                         <p className="product__price">
-                            <small>$</small>
                             <strong>{price}</strong>
+                            <small> Ft</small>
                         </p>
                     </div>
                     <img src={image} alt="" />
@@ -72,4 +72,22 @@ function Product({id,title,image,price, desc}){
     )
 }
 
-export default Product;
+export const ProductRow = ({title, desc, image, price,key}) => {
+    const removeProduct = (id) => {
+        console.log('Termek id:', key)
+    }
+
+    return (
+        <div className="productRow">
+            <br/>
+            <h2>Adatbázisban szereplő termékek:</h2>
+            <img src={image} className="productRow__Img"/>
+            <div className="productRow__Title">{title}</div>
+            <div className="productRow__Text">{desc}</div>
+            <div className="productRow__Text">{price}</div>
+            <button onClick={removeProduct()}>Delete me;)</button>
+        </div>
+    )
+}
+
+export default Product

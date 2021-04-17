@@ -40,7 +40,7 @@ const UserSettings = () => {
             <ol>
                 {settings.map( (data) => 
                     <li key={data.id}>
-                        <div  className="city-entry">
+                        <div className="city-entry">
                             {data.city}
                             <code className="city"> {data.street}</code>
                         </div>

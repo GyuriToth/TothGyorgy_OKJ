@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import '../style/Login.css'
 import { Link, useHistory } from 'react-router-dom'
-import logo from '../img/logo.png'
 import { auth } from '../firebase'
 
 function Login(){
@@ -22,7 +21,7 @@ function Login(){
     return(
         <div className="login">
             <Link to="/">
-                <img className="login__logo" alt="logo" src={logo}/>
+                <img className="login__logo" alt="logo" src="https://firebasestorage.googleapis.com/v0/b/bodorakku-575ca.appspot.com/o/shopping-bag.png?alt=media&token=149b2896-aff8-4a2c-a0c5-212a51bce0f4"/>
             </Link>
             <div className="login__container">
                 <div className="login__title">

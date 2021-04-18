@@ -32,7 +32,6 @@ function Shop() {
           </div>
         
       </div>
-      <hr/>
 
         <div className="shop__page">
           <div className="shop__row">

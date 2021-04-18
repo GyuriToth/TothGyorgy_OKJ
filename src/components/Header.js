@@ -5,7 +5,6 @@ import PersonAddIcon from '@material-ui/icons/PersonAdd'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 import '../style/App.css'
 import { Link } from 'react-router-dom'
-import logo from '../img/logo.png'
 import { useStateValue } from '../StateProvider'
 import { auth } from '../firebase'
 
@@ -35,7 +34,7 @@ function Header() {
     <nav className="header">
       <Link to="/" className="header__link">
         <div className="header__logoBox" >
-          <img className="header__logo" src={logo} alt="logo" />
+          <img className="header__logo" src="https://firebasestorage.googleapis.com/v0/b/bodorakku-575ca.appspot.com/o/shopping-bag.png?alt=media&token=149b2896-aff8-4a2c-a0c5-212a51bce0f4" alt="logo" />
         </div>
       </Link>
       

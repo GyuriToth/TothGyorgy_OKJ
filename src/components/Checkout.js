@@ -4,18 +4,21 @@ import { useStateValue } from '../StateProvider'
 import Subtotal from './Subtotal'
 import ProductCart from './ProductCart'
 
+import { Link } from 'react-router-dom'
+
 function Checkout (){
     
     const [{basket}] = useStateValue();
     
     return (
         <div className="checkout">
-            <div className="checkout__left">
-            
             {
                 basket.length === 0 ? (
-                    <div>
-                        <h2 className="checkout__title">A kosár üres.</h2>
+                    <div className="checkout__cartEmpty">
+                        <h2>A kosár üres.</h2>
+                        <Link to="/shop">
+                            <button className="checkout__shopButton">Vissza a vásárláshoz</button>
+                        </Link>
                     </div>
                 ) : (
                     <div>
@@ -35,13 +38,9 @@ function Checkout (){
                     </div>
                 )
             }
-                
-            </div>
                 {
                     basket.length > 0 && (
-                        <div className="checkout__right">
                             <Subtotal/>
-                        </div>
                     )
                 }
         </div>

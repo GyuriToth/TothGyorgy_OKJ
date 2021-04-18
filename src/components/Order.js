@@ -1,6 +1,9 @@
-import React from 'react';
-import { useStateValue } from '../StateProvider';
+import React from 'react'
+import { useStateValue } from '../StateProvider'
 import { FormInput } from './Message'
+import '../style/App.css'
+
+import { Link } from 'react-router-dom'
 
 
 export const Order=()=>{
@@ -10,26 +13,45 @@ export const Order=()=>{
     const getCartTotal=(basket)=>basket?.reduce((tot,item)=>item.price*item.quantity+tot,0)
 
     return(
-        <div>
+        <div className="order">
           <h1>Összefoglaló</h1>
           {
           [...basket].sort((a,b)=>a.id>b.id ? 1:-1).map(item=>
-            <div>
-              {
-                /*<div className=''>{item.id}</div>*/
-              }
-              <div>{item.title}</div>
-              <div>{item.price}</div>
-              <div>{item.quantity}</div>
-              <div><img src={item.image} alt="" width='50'/></div>
-              <div>ár: {item.price*item.quantity} Ft</div>
+            <div className="order__row">
+              <div className="order__img">
+                <img src={item.image} alt="" height="100%"/>
+              </div>
+
+              <div className="order__info">
+                <div className="order__infoTitle">
+                  <strong>{item.title}</strong>
+                </div>
+
+                <div>
+                  {item.price} Ft
+                </div>
+
+                <div>
+                  {item.quantity} darab
+                </div>
+
+                <div>
+                  Összesen: {item.price*item.quantity} Ft
+                </div>
+              </div>
             </div>
 
           )
           }
-          <div className=''>Rendelés összege: {getCartTotal(basket)} Ft</div>
+          <Link to="/checkout">
+            <button className="order__backToCheckout">Vissza a kosárhoz</button>
+          </Link>
+  
+          <div className="order__summary"><p>Rendelés összege: {getCartTotal(basket)} Ft</p></div>
 
-          <FormInput/>
+          <div className="order__form">
+            <FormInput/>
+          </div>
         </div>
     )
 }

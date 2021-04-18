@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import emailjs, { init } from 'emailjs-com'
+import '../style/App.css'
 
 export const FormInput=()=>{
 
@@ -29,17 +30,17 @@ export const FormInput=()=>{
     <div>
     <div>
         <br/>
-        <h4 className="">Rendelési adatok</h4> 
+        <h4>Rendelési adatok</h4> 
         <form onSubmit={handleSubmit}>
-            <div className="">
-            <label htmlFor="name">*Név</label>
-            <input type="text" className="" placeholder="név" value={name} onChange={e => setName(e.target.value)} required/>
+            <div>
+                <label htmlFor="name">*Név </label>
+                <input type="text" placeholder="név" value={name} onChange={e => setName(e.target.value)} required/>
             </div>
-            <div className="form-group">
-                <label htmlFor="email">*E-mail</label>
-                <input type="email" id="email" className="" required placeholder="e-mail cím" value={email} onChange={e=>setEmail(e.target.value)}/>
+            <div>
+                <label htmlFor="email">*E-mail </label>
+                <input type="email" id="email" required placeholder="e-mail cím" value={email} onChange={e=>setEmail(e.target.value)}/>
             </div>
-            <input className="" type="submit" value="Rendelés megerősítése" />           
+            <input type="submit" value="Rendelés megerősítése" />           
         </form>
         </div>
     </div>

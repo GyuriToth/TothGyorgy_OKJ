@@ -79,15 +79,24 @@ export const ProductRow = ({title, desc, image, price,key}) => {
 
     return (
         <div className="productRow">
-            <br/>
-            <h2>Adatbázisban szereplő termékek:</h2>
-            <img src={image} className="productRow__Img"/>
-            <div className="productRow__Title">{title}</div>
-            <div className="productRow__Text">{desc}</div>
-            <div className="productRow__Text">{price}</div>
-            <button onClick={removeProduct()}>Delete me;)</button>
+            <div className="productRow__img">
+                <img src={image} alt="" height="100%"/>
+            </div>
+            <div className="productRow__info">
+                <div className="productRow__Title">
+                    <strong>{title}</strong>
+                </div>
+                <div className="productRow__Text">{desc}</div>
+                <div className="productRow__Text">{price}</div>
+                <button onClick={removeProduct()}>Delete me;)</button>
+            </div>
         </div>
+
+
+        
     )
+
+
 }
 
 export default Product

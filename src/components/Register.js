@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../style/Register.css';
 import { Link, useHistory } from 'react-router-dom';
-import logo from '../img/logo.png';
 import firebase, { auth } from '../firebase';
 
 function Register(){
@@ -27,7 +26,7 @@ function Register(){
     return(
         <div className="register">
             <Link to="/">
-                <img className="register__logo" alt="logo" src={logo}/>
+                <img className="register__logo" alt="logo" src="https://firebasestorage.googleapis.com/v0/b/bodorakku-575ca.appspot.com/o/shopping-bag.png?alt=media&token=149b2896-aff8-4a2c-a0c5-212a51bce0f4"/>
             </Link>
             <div className="register__container">
                 <div className="register__title">

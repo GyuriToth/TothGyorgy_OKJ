@@ -19,7 +19,11 @@ const PersonalInfoForm = () => {
         e.preventDefault()
         db.collection('userInformation').doc(loggedinuser.email).update({
             name: name,
-            birthday: birthday
+            birthday: birthday,
+            deliveryName: deliveryName,
+            postalCode: postalCode,
+            city: city,
+            address: address
         })
     }
 

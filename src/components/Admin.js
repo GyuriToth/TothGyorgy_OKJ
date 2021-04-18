@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import firebase from 'firebase'
+import '../style/App.css'
 
 import { CategoryArray } from './CategoryArray'
 import { ProductRow } from './Product'
@@ -42,15 +43,15 @@ export const Admin=()=>{
 
     return(
         <React.Fragment>
-            <h4 className=''>Új termék bevezetése</h4>
-            <form className='' onSubmit={onsubmit}>
-                <div className=''>
+            <h4>Új termék bevezetése</h4>
+            <form onSubmit={onsubmit}>
+                <div>
                     <label>Termék neve:</label>
-                    <input className='' type='text' value={title} onChange={(e=>setTitle(e.currentTarget.value))}/>
+                    <input type='text' value={title} onChange={(e=>setTitle(e.currentTarget.value))}/>
                 </div>
                 <div>
                     <label>Kategória</label>
-                    <select className="shop__filterSelect" onChange={e => setCategory(e.currentTarget.value)}>
+                    <select onChange={e => setCategory(e.currentTarget.value)}>
                         <option value="0">Válassz kategóriát!</option>
                             {
                                 categories.map (item =>
@@ -78,6 +79,8 @@ export const Admin=()=>{
                     <button type='submit'>Mentés</button>
                 </div>
                 
+                <br/>
+                <h2>Adatbázisban szereplő termékek:</h2>
                 {
                     products.map(product=>
                         <ProductRow 

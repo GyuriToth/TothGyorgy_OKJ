@@ -3,6 +3,8 @@ import CurrencyFormat from 'react-currency-format';
 import { useStateValue } from '../StateProvider';
 import { Link } from 'react-router-dom'
 
+import '../style/App.css'
+
 function Subtotal(){
     
     const getCartTotal = (basket) => 
@@ -15,16 +17,19 @@ function Subtotal(){
             <CurrencyFormat
                 renderText={(value) => (
                     <p>
-                        Subtotal({basket.length} items) : <strong>{`${value}`}</strong>
+                        Részösszeg: ({basket.length}db termék): <strong>{`${value}`} Ft</strong>
                     </p>
                 )
                 }
             value={getCartTotal(basket)}
             displayType={"text"}
             thousandSeparator={true}
-            prefix={"$"}
             />
-            <Link to="/order">Rendelés</Link>
+            <div className="subtotal__buttonContainer">
+                <Link to="/order" className="subtotal__button">
+                    Tovább a rendeléshez
+                </Link>
+            </div>
         </div>
     )
 }

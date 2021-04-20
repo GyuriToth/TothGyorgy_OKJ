@@ -32,11 +32,12 @@ function Header() {
 
   return (
     <nav className="header">
-      <Link to="/" className="header__link">
-        <div className="header__logoBox" >
+      <div className="header__logoBox" >
+        <Link to="/" className="header__link">
           <img className="header__logo" src="https://firebasestorage.googleapis.com/v0/b/bodorakku-575ca.appspot.com/o/shopping-bag.png?alt=media&token=149b2896-aff8-4a2c-a0c5-212a51bce0f4" alt="logo" />
-        </div>
-      </Link>
+        </Link>
+      </div>
+      
       
       {/*
       <div className="header__search">
@@ -48,46 +49,49 @@ function Header() {
       <div className="header__nav">
         <Link to="/shop" className="header__link">
           <div className="header__option">
-            <span className="header__optionLine">SHOP</span>
+            <span className="header__optionLine">Áruház</span>
           </div>
         </Link>
 
+        {/*
         <Link to="/home" className="header__link">
             <div className="header__option">
               <span className="header__optionLine">HOME</span>
             </div>
         </Link>
+        */}
       </div>
 
         <div className="header__toolbar">
-          
+          <div className="header__toolbarInner">
             <div className="header__optionUser">
-                {
-                  loggedinuser 
-                  ?
-                  <div>
-                    <Link to={loggedinuser ? "/profile" : "/login"} className="header__link">
-                      <PersonIcon/>
-                    </Link>
-                    <ExitToAppIcon className="header__link" onClick={() => auth.signOut()}/>
-                  </div>
-                  :
-                  <Link to={loggedinuser ? "/profile" : "/login"} className="header__link">
+                  {
+                    loggedinuser 
+                    ?
                     <div>
-                      <PersonAddIcon/>
+                      <Link to={loggedinuser ? "/profile" : "/login"} className="header__link">
+                        <PersonIcon/>
+                      </Link>
+                      <ExitToAppIcon className="header__link" onClick={() => auth.signOut()}/>
                     </div>
-                  </Link>
-                }
-            </div>
+                    :
+                    <div>
+                      <Link to={loggedinuser ? "/profile" : "/login"} className="header__link">
+                          <PersonAddIcon/>
+                      </Link>
+                    </div>
+                  }
+              </div>
 
-
-          <Link to="/checkout" className="header__link">
-            <div className="header__optionCart">
-              <LocalMallIcon/>
-              <div className="header__productCount">{basket?.length}</div>
-            </div>
-          </Link>
+            <Link to="/checkout" className="header__link">
+              <div className="header__optionCart">
+                <LocalMallIcon/>
+                <div className="header__productCount">{basket?.length}</div>
+              </div>
+            </Link>
+          </div>
         </div>
+            
     </nav>
   );
 }

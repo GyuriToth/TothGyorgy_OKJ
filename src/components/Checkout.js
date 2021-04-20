@@ -12,37 +12,41 @@ function Checkout (){
     
     return (
         <div className="checkout">
+            <h2 className="checkout__title">Kosár tartalma:</h2>
             {
                 basket.length === 0 ? (
                     <div className="checkout__cartEmpty">
                         <h2>A kosár üres.</h2>
                         <Link to="/shop">
-                            <button className="checkout__shopButton">Vissza a vásárláshoz</button>
+                            <button className="checkout__shopButton">Vissza az áruházhoz</button>
                         </Link>
                     </div>
-                ) : (
-                    <div>
-                        <h2 className="shoppingbaskettitle">Kosár tartalma:</h2>
-                        {
-                             [...basket].sort((a,b)=>a.id>b.id ? 1:-1).map(item=>(
-                                <ProductCart
-                                    key={item.key}
-                                    id={item.id}
-                                    title={item.title}
-                                    image={item.image}
-                                    price={item.price}
-                                    quantity={item.quantity}
-                                />
-                             ))
-                        }
+                ) 
+                : 
+                (
+                    <div className="checkout__container">
+                        <div className="checkout__products">
+                            {
+                                [...basket].sort((a,b)=>a.id>b.id ? 1:-1).map(item=>(
+                                    <ProductCart
+                                        key={item.key}
+                                        id={item.id}
+                                        title={item.title}
+                                        image={item.image}
+                                        price={item.price}
+                                        quantity={item.quantity}
+                                    />
+                                ))
+                                
+                            }
+                        </div> 
+                        <div className="checkout__subtotal">
+                            <Subtotal/>
+                        </div>
                     </div>
                 )
             }
-                {
-                    basket.length > 0 && (
-                            <Subtotal/>
-                    )
-                }
+                                
         </div>
     )
 }

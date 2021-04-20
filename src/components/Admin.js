@@ -15,9 +15,7 @@ export const Admin=()=>{
     const [price,setPrice] = useState('')
     const [desc,setDesc] = useState('')
     const [photoUrl,setPhotoUrl] = useState(null)
-    const [category, setCategory]  = useState('')
-
-    //var product_query = db.collection('products').where(id,'==', product_id);
+    const [userCategory, setUserCategory]  = useState('')
 
     const onFileChange=async(e)=>{
         const file=e.target.files[0]
@@ -37,7 +35,7 @@ export const Admin=()=>{
                 desc,
                 price: parseInt(price),
                 image: photoUrl,
-                category: category
+                category: userCategory
             })
     }
 
@@ -51,11 +49,11 @@ export const Admin=()=>{
                 </div>
                 <div>
                     <label>Kategória</label>
-                    <select onChange={e => setCategory(e.currentTarget.value)}>
+                    <select id="ktg" onChange={e => setUserCategory(e.currentTarget.value)}>
                         <option value="0">Válassz kategóriát!</option>
                             {
                                 categories.map (item =>
-                                    <option value={category}>{ item.id }</option>
+                                    <option value={item.id}>{ item.id }</option>
                                 )
                             }
                     </select>
@@ -83,7 +81,7 @@ export const Admin=()=>{
                 <h2>Adatbázisban szereplő termékek:</h2>
                 {
                     products.map(product=>
-                        <ProductRow 
+                        <ProductRow className="admin__productRow"
                             key={product.id}
                             id={product.id}
                             title={product.title}

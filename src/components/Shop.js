@@ -24,7 +24,7 @@ function Shop() {
                 <option value="0">Összes</option>
                   {
                     category.map (item =>
-                      <option value={item.id}>{item.id}</option>
+                      <option key={item.id} value={item.id}>{item.id}</option>
                     )
                   }
               </select>
@@ -51,7 +51,8 @@ function Shop() {
               )
               :
               products.filter( item => item.category===selectedCategory ).map(product=>
-                <Product key={product.id}
+                <Product 
+                    key={product.id}
                     id={product.id}
                     title={product.title}
                     price={product.price}

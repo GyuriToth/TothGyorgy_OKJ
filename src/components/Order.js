@@ -8,8 +8,6 @@ import { Link } from 'react-router-dom'
 
 export const Order=()=>{
     const [{basket}]=useStateValue()
-
-
     const getCartTotal=(basket)=>basket?.reduce((tot,item)=>item.price*item.quantity+tot,0)
 
     return(
@@ -17,7 +15,7 @@ export const Order=()=>{
           <h1>Összefoglaló</h1>
           {
           [...basket].sort((a,b)=>a.id>b.id ? 1:-1).map(item=>
-            <div className="order__row">
+            <div key={item.id} className="order__row">
               <div className="order__img">
                 <img src={item.image} alt="" height="100%"/>
               </div>
@@ -48,10 +46,7 @@ export const Order=()=>{
           </Link>
   
           <div className="order__summary"><p>Rendelés összege: {getCartTotal(basket)} Ft</p></div>
-
-          <div className="order__form">
             <FormInput/>
-          </div>
         </div>
     )
 }

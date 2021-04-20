@@ -72,7 +72,7 @@ const PersonalInfoForm = () => {
                             <td><input type="text" value={address} onChange={e => setAddress(e.currentTarget.value)}></input></td>
                         </tr>
                         <tr>
-                            <td colSpan="2"><button type="submit">Nyomj meg</button></td>
+                            <td colSpan="2"><button type="submit">Mentés</button></td>
                         </tr>
                     </tbody>
                 </table>

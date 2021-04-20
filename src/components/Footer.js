@@ -14,7 +14,7 @@ const Footer = () => {
     return (
         <div className="footer">
             <div className="footer__top" onClick={topFunction}>
-                <p>Back to Top</p>
+                <p>Ugrás a lap tetejére</p>
             </div>
             <div className="footer__links">
                 <div className="footer__linkCol">
@@ -25,6 +25,7 @@ const Footer = () => {
                 <div className="footer__linkCol">
                     <div>Vásárlási feltételek</div>
                     <div>Adatkezelési tájékoztató</div>
+                    
                     {
                     loggedinuser?.email === admin_email
                     ?

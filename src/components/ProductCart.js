@@ -7,7 +7,7 @@ import RemoveRoundedIcon from '@material-ui/icons/RemoveRounded';
 
 function ProductCart({id, title, image, price, quantity}){
 
-    const [dispatch] = useStateValue();
+    const [{basket},dispatch] = useStateValue();
     const removeItem = () => {
         dispatch({
             type: 'REMOVE_FROM_CART',
@@ -51,10 +51,9 @@ function ProductCart({id, title, image, price, quantity}){
 
                 <div className="productcart__info">
                     <div className="productcart__topContainer">
-                        <p className="productcart__title">{title}</p>
-                        <span><p>Price: </p><CurrencyFormat value={price} displayType={'text'} thousandSeparator={true}/></span>
-                        
-                        
+                        <p className="productcart__title"><strong>{title}</strong></p>
+                        <br/>
+                        <span>Ár: <CurrencyFormat value={price} displayType={'text'} thousandSeparator={true}/> Ft</span>
                     </div>
                     
                     <div className="productcart__bottomContainer">
@@ -64,7 +63,7 @@ function ProductCart({id, title, image, price, quantity}){
                             <p className="productcart__quantityPlus" onClick={increaseQuantity}><AddRoundedIcon/></p>
                         </div>
 
-                        <button className="button__remove" onClick={removeItem}>Remove from the cart</button>
+                        <button className="button__remove" onClick={removeItem}>Termék eltávolítása</button>
                     </div>
                 </div>
             </div>

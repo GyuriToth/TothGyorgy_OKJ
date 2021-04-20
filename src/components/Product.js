@@ -1,6 +1,7 @@
 import '../style/App.css'
 import { useStateValue } from '../StateProvider'
 import { useState } from 'react'
+import firebase from 'firebase'
 
 import ReactCardFlip from 'react-card-flip'
 
@@ -72,15 +73,26 @@ function Product({id, title, image, price, desc}){
     )
 }
 
-export const ProductRow = ({title, desc, image, price,key}) => {
-    const removeProduct = (id) => {
-        console.log('Termek id:', key)
+export const ProductRow = ({title, desc, image, price, id}) => {
+    //console.log(id)
+
+    const removeProduct = (e) => {
+        e.preventDefault()
+            firebase
+                .firestore()
+                .collection('products').doc(id)
+                .delete()
+                .then(() => {
+                    console.log("Document successfully deleted!");
+                }).catch((error) => {
+                    console.error("Error removing document: ", error);
+                });
     }
 
     return (
         <div className="productRow">
             <div className="productRow__img">
-                <img src={image} alt="" height="100%"/>
+                <img src={image} alt=""/>
             </div>
             <div className="productRow__info">
                 <div className="productRow__Title">
@@ -88,12 +100,9 @@ export const ProductRow = ({title, desc, image, price,key}) => {
                 </div>
                 <div className="productRow__Text">{desc}</div>
                 <div className="productRow__Text">{price}</div>
-                <button onClick={removeProduct()}>Delete me;)</button>
+                <button onClick={removeProduct}>Delete me;)</button>
             </div>
         </div>
-
-
-        
     )
 
 

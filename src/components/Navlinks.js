@@ -5,10 +5,8 @@ import '../style/App.css';
 function Navlinks (){
     return (
         <div className="navlinks">
-            <div className="navlinks__outer">
-                <div className="navlinks__inner">
-                    <Link><div>Fontos! Motorakksi Jogszabály 2021!</div></Link>
-                </div>
+            <div className="navlinks__container">
+                    <Link to="/">Közlemény</Link>
             </div>
         </div>
     )

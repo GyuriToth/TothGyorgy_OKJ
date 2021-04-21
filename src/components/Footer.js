@@ -29,7 +29,7 @@ const Footer = () => {
                     {
                     loggedinuser?.email === admin_email
                     ?
-                    <Link to="/admin"><div>ADMIN</div></Link>
+                    <div><Link to="/admin" className="footer__admin">ADMIN</Link></div>
                     :
                     console.log('')
                     }   

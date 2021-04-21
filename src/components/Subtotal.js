@@ -1,6 +1,6 @@
-import React from 'react';
-import CurrencyFormat from 'react-currency-format';
-import { useStateValue } from '../StateProvider';
+import React from 'react'
+import CurrencyFormat from 'react-currency-format'
+import { useStateValue } from '../StateProvider'
 import { Link } from 'react-router-dom'
 
 import '../style/App.css'

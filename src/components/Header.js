@@ -34,7 +34,7 @@ function Header() {
     <nav className="header">
       <div className="header__logoBox" >
         <Link to="/" className="header__link">
-          <img className="header__logo" src="https://firebasestorage.googleapis.com/v0/b/bodorakku-575ca.appspot.com/o/shopping-bag.png?alt=media&token=149b2896-aff8-4a2c-a0c5-212a51bce0f4" alt="logo" />
+          <img className="header__logo" src="https://firebasestorage.googleapis.com/v0/b/bodorakku-575ca.appspot.com/o/shopping-bag.png?alt=media&token=0c341018-fd06-4e5b-9b78-86e1fc1a8361" alt="logo" />
         </Link>
       </div>
       

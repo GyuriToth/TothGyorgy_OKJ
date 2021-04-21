@@ -4,6 +4,7 @@ import { useState } from 'react'
 import firebase from 'firebase'
 
 import ReactCardFlip from 'react-card-flip'
+import CurrencyFormat from 'react-currency-format';
 
 function Product({id, title, image, price, desc}){
     
@@ -44,10 +45,18 @@ function Product({id, title, image, price, desc}){
             {
                 <div className="product">
                     <div className="product__info">
-                        <p>{title}</p>
+                        <strong>{title}</strong>
                         <p className="product__price">
-                            <strong>{price}</strong>
-                            <small> Ft</small>
+                            <strong>
+                                <CurrencyFormat
+                                    renderText={(value) => (
+                                        <p>{value} Ft</p>
+                                    )}
+                                    value={price}
+                                    displayType={"text"}
+                                    thousandSeparator={true}
+                                />
+                            </strong>
                         </p>
                     </div>
                     <img src={image} alt="" />
@@ -74,8 +83,6 @@ function Product({id, title, image, price, desc}){
 }
 
 export const ProductRow = ({title, desc, image, price, id}) => {
-    //console.log(id)
-
     const removeProduct = (e) => {
         e.preventDefault()
             firebase
@@ -99,8 +106,19 @@ export const ProductRow = ({title, desc, image, price, id}) => {
                     <strong>{title}</strong>
                 </div>
                 <div className="productRow__Text">{desc}</div>
-                <div className="productRow__Text">{price}</div>
-                <button onClick={removeProduct}>Delete me;)</button>
+                <div className="productRow__Text">
+                    <CurrencyFormat
+                        renderText={(value) => (
+                            <p>
+                                <strong>{value}</strong><small>Ft</small>
+                            </p>
+                        )}
+                        displayType={"text"}
+                        thousandSeparator={true}
+                        value={price}
+                    />
+                </div>
+                <div className="productRow__button" onClick={removeProduct}>Termék törlése</div>
             </div>
         </div>
     )

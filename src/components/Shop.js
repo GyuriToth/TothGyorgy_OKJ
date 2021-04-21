@@ -16,9 +16,10 @@ function Shop() {
         <div className="shop__filterBar">
           <div className="shop__filterBarBox">
             <div className="shop__filterBarBoxRow">
-              <label>Kategória:</label>
+              <div className="shop__filterItem">Kategória:</div>
+              <div className="shop__filterItem">Rendezés:</div>
+              <div className="shop__filterItem">Keresés:</div>
             </div>
-
             <div className="shop__filterBarBoxRow">
               <select className="shop__filterSelect" onChange={e => setSelectedCategory(e.currentTarget.value)}>
                 <option value="0">Összes</option>
@@ -28,6 +29,11 @@ function Shop() {
                     )
                   }
               </select>
+              <select className="shop__filterSelect">
+                <option value="asc">Ár szerint növekvő</option>
+                <option value="desc">Ár szerint csökkenő</option>
+              </select>
+              <input type="text" className="shop__filterSearch"></input>
             </div>
           </div>
         

@@ -4,6 +4,7 @@ import { FormInput } from './Message'
 import '../style/App.css'
 
 import { Link } from 'react-router-dom'
+import CurrencyFormat from 'react-currency-format'
 
 
 export const Order=()=>{
@@ -25,16 +26,30 @@ export const Order=()=>{
                   <strong>{item.title}</strong>
                 </div>
 
-                <div>
-                  {item.price} Ft
-                </div>
+                <strong>
+                  <CurrencyFormat
+                    renderText={(value) => (
+                      <p>{value}<small>Ft</small></p>
+                    )}
+                    value={item.price}
+                    displayType={"text"}
+                    thousandSeparator={true}
+                  />
+                </strong>
 
                 <div>
                   {item.quantity} darab
                 </div>
 
                 <div>
-                  Összesen: {item.price*item.quantity} Ft
+                <CurrencyFormat
+                  renderText={(value) => (
+                    <p>Összesen: {value}<small>Ft</small></p>
+                  )}
+                  value={item.price*item.quantity}
+                  displayType={"text"}
+                  thousandSeparator={true}
+                />
                 </div>
               </div>
             </div>
@@ -45,8 +60,17 @@ export const Order=()=>{
             <button className="order__backToCheckout">Vissza a kosárhoz</button>
           </Link>
   
-          <div className="order__summary"><p>Rendelés összege: {getCartTotal(basket)} Ft</p></div>
-            <FormInput/>
+          <div className="order__summary">
+            <CurrencyFormat
+              renderText={(value) => (
+                <strong>Rendelés összege: {value}<small>Ft</small></strong>
+              )}
+              value={getCartTotal(basket)}
+              displayType={"text"}
+              thousandSeparator={true}
+            />
+          </div>
+          <FormInput/>
         </div>
     )
 }

@@ -41,58 +41,58 @@ export const Admin=()=>{
 
     return(
         <React.Fragment>
+            <div className="admin">
             <h4>Új termék bevezetése</h4>
-            <form onSubmit={onsubmit}>
-                <div>
-                    <label>Termék neve:</label>
-                    <input type='text' value={title} onChange={(e=>setTitle(e.currentTarget.value))}/>
-                </div>
-                <div>
-                    <label>Kategória</label>
-                    <select id="ktg" onChange={e => setUserCategory(e.currentTarget.value)}>
-                        <option value="0">Válassz kategóriát!</option>
-                            {
-                                categories.map (item =>
-                                    <option value={item.id}>{ item.id }</option>
-                                )
-                            }
-                    </select>
-                </div>
+                <form onSubmit={onsubmit}>
+                    <div className="admin__row">
+                        <div className="admin__label">Termék neve:</div>
+                        <input type='text' value={title} onChange={(e=>setTitle(e.currentTarget.value))}/>
+                    </div>
+                    <div className="admin__row">
+                        <div className="admin__label">Kategória</div>
+                        <select id="ktg" onChange={e => setUserCategory(e.currentTarget.value)}>
+                            <option value="0">Válassz kategóriát!</option>
+                                {
+                                    categories.map (item =>
+                                        <option value={item.id}>{ item.id }</option>
+                                    )
+                                }
+                        </select>
+                    </div>
 
-                <div>
-                    <label>Leírása:</label>
-                    <input type='text' value={desc} onChange={(e=>setDesc(e.currentTarget.value))}/>
-                </div>
-                <div>
-                    <label>Fotó:</label>
-                    <input type='file'  onChange={onFileChange}/>
-                </div>
-                <div>
-                    <div>
-                         <label>Termék ára:</label>
+                    <div className="admin__row">
+                        <div className="admin__label">Leírása:</div>
+                        <input type='text' value={desc} onChange={(e=>setDesc(e.currentTarget.value))}/>
+                    </div>
+                    <div className="admin__row">
+                        <div  className="admin__label">Fotó:</div>
+                        <input type='file' onChange={onFileChange}/>
+                    </div>
+                    <div className="admin__row">
+                        <div className="admin__label">Termék ára:</div>
                         <input type='number' value={price} onChange={(e=>setPrice(e.currentTarget.value))}/>
                     </div>
-                </div>
-                <div>
-                    <button type='submit'>Mentés</button>
-                </div>
-                
-                <br/>
-                <h2>Adatbázisban szereplő termékek:</h2>
-                {
-                    products.map(product=>
-                        <ProductRow className="admin__productRow"
-                            key={product.id}
-                            id={product.id}
-                            title={product.title}
-                            price={product.price}
-                            image={product.image}
-                            desc={product.desc}
-                        />
-                    )
-                }
+                    <div>
+                        <button type='submit'>Mentés</button>
+                    </div>
+                    
+                    <br/>
+                    <h2>Adatbázisban szereplő termékek:</h2>
+                    {
+                        products.map(product=>
+                            <ProductRow className="admin__productRow"
+                                key={product.id}
+                                id={product.id}
+                                title={product.title}
+                                price={product.price}
+                                image={product.image}
+                                desc={product.desc}
+                            />
+                        )
+                    }
 
-            </form>
+                </form>
+            </div>
         </React.Fragment>
     )
 }
